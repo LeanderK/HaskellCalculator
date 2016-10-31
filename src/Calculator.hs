@@ -79,7 +79,7 @@ solve m b =
   in
     if determinante u l p == 0.0
       then Left "no unique solution for the equation system does exist"
-      else Right (solveLower l (solveUpper u (permutate p b)))
+      else Right (solveUpper u ( solveLower l (permutate p b)))
 
 -- | takes a permutation matrix and a vector and permutates the verctor
 permutate :: Matrix Float -> [Integer] -> [Float]
